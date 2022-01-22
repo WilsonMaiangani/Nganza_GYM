@@ -10,6 +10,11 @@ import javax.swing.JOptionPane;
 import Controller.DataContext;
 import model.Usuario;
 import java.sql.*;
+import java.util.Dictionary;
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.Map;
+
 import config.Conexao;
 import helpers.Mensagem;
 
@@ -265,8 +270,32 @@ public class pnl_Login extends javax.swing.JPanel {
 
         private void btnEntrarMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnEntrarMouseClicked
 
-                // Connection con = Conexao.getConnection();
-                //
+                // Map<String, String> teste = new HashMap<String, String>();
+                // // Hashtable<String,String> teste = new Hashtable<String,String>();
+                // teste.put("nome", "NomeMerda");
+                // teste.put("genero", "masculino");
+                // teste.put("datanascimento", "2022-05-06");
+                // teste.put("chave", "44758965");
+
+                // Map<Integer, String> teste = new HashMap<Integer, String>();
+                // teste.putIfAbsent(5, "arg1")
+                // teste.put(2, "ANomeMerda");
+                // teste.put(1, "GeneroMerda");
+                // teste.put(4, "Bmasculino");
+                // teste.put(3, "44758965");
+                
+                // dataContext.Add("pessoa", teste);
+
+                // String key = "", value = "";
+                // for (Map.Entry<String, String> item : teste.entrySet()) {
+                //         key += item.getKey() + ',';
+                //         value += item.getValue() + ',';
+                // }
+                // key = key.substring(0, key.length() - 1);
+                // value = value.substring(0, value.length() - 1);
+                // String tabela = "pessoa";
+
+                // String query = "Insert into "+tabela+"("+key+") values ("+value+");";
 
                 usuario.setCodigo(txtCodigo.getText());
                 usuario.setSenha(getSenha());
@@ -278,10 +307,9 @@ public class pnl_Login extends javax.swing.JPanel {
                         var result = dataContext.Login(usuario.getCodigo(), usuario.getSenha());
                         if (result)
                                 JOptionPane.showMessageDialog(this, "Login com sucesso.");
-                        else                        
+                        else
                                 lblAlert.setText(Mensagem.getAlertErroLogin());
-                        
-                                
+
                 }
 
         }// GEN-LAST:event_btnEntrarMouseClicked
