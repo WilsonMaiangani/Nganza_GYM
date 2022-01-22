@@ -1,10 +1,10 @@
 use nganzagym;
 
-insert into pessoa  (nome, genero, datanascimento, chave)
+insert into pessoa  (nome, genero, chave)
 values
-("Wilson Kiangana",'masculino','2050-07-23','0000777pppmmm'),
-("Tambu Jenny",'masculino','2050-07-23','11155566888'),
-("Manuel Machado",'masculino','2050-07-23','333442288');
+("Wilson Kiangana",'masculino','0000777pppmmm'),
+("Tambu Jenny",'masculino','11155566888'),
+("Manuel Machado",'masculino','333442288');
 
 insert into cargo  (cargo)
 values ("Admin"),("Professor"),("Usuario");

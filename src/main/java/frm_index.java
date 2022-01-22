@@ -1,5 +1,6 @@
 
 import Controller.PanelChange;
+import Forms.pnl_Cadastro;
 import Forms.pnl_Cliente;
 import Forms.pnl_Login;
 import java.awt.BorderLayout;
@@ -8,7 +9,6 @@ import java.awt.BorderLayout;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author SNIR
@@ -20,19 +20,16 @@ public class frm_index extends javax.swing.JFrame {
      */
     public frm_index() {
         initComponents();
-        
-        
+
         PanelChange cl_panel = new PanelChange();
-        pnl_Login  login = new pnl_Login ();
+        pnl_Login login = new pnl_Login();
         cl_panel.changePanel(pnl_index, login);
-        
-          lbl_time.setText("");
-          lbl_time.setText(cl_panel.gettime());  
-       
-        
-        
+
+        lbl_time.setText("");
+        lbl_time.setText(cl_panel.gettime());
+
     }
-       
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -50,6 +47,7 @@ public class frm_index extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jToggleButton1 = new javax.swing.JToggleButton();
+        btn_Cadastro = new javax.swing.JButton();
         pnl_index = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -73,6 +71,11 @@ public class frm_index extends javax.swing.JFrame {
         btn_cliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_clienteMouseClicked(evt);
+            }
+        });
+        btn_cliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_clienteActionPerformed(evt);
             }
         });
 
@@ -112,6 +115,20 @@ public class frm_index extends javax.swing.JFrame {
         jToggleButton1.setForeground(new java.awt.Color(215, 165, 99));
         jToggleButton1.setText("Logout");
 
+        btn_Cadastro.setBackground(new java.awt.Color(215, 165, 99));
+        btn_Cadastro.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btn_Cadastro.setText("Inscrição");
+        btn_Cadastro.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btn_Cadastro.setBorderPainted(false);
+        btn_Cadastro.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_Cadastro.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        btn_Cadastro.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        btn_Cadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_CadastroActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -127,6 +144,7 @@ public class frm_index extends javax.swing.JFrame {
                     .addComponent(jLabel8))
                 .addGap(42, 42, 42))
             .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btn_Cadastro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,6 +161,8 @@ public class frm_index extends javax.swing.JFrame {
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_Cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -218,12 +238,24 @@ public class frm_index extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_clienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_clienteMouseClicked
-                // TODO add your handling code here:
-                PanelChange cl_panel = new PanelChange();
-                pnl_Cliente Cliente = new pnl_Cliente();
-                cl_panel.changePanel(pnl_index, Cliente);
-        
+        // TODO add your handling code here:
+        PanelChange cl_panel = new PanelChange();
+        pnl_Cliente Cliente = new pnl_Cliente();
+        cl_panel.changePanel(pnl_index, Cliente);
+
     }//GEN-LAST:event_btn_clienteMouseClicked
+
+    private void btn_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_clienteActionPerformed
+
+    private void btn_CadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CadastroActionPerformed
+        // TODO add your handling code here:
+
+        PanelChange cl_panel = new PanelChange();
+        pnl_Cadastro Cadastro = new pnl_Cadastro();
+        cl_panel.changePanel(pnl_index, Cadastro);
+    }//GEN-LAST:event_btn_CadastroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -256,13 +288,13 @@ public class frm_index extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new frm_index().setVisible(true);
-                
-                
+
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_Cadastro;
     private javax.swing.JButton btn_cliente;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;

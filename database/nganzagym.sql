@@ -11,7 +11,6 @@ create table if not exists Pessoa(
 Id 	  int not null primary key auto_increment ,
 Nome  nvarchar(100) not null ,
 Genero  enum('masculino','femenino') not null ,
-DataNascimento date not null ,
 Chave nvarchar(100) UNIQUE
 ) default charset = utf8;
 
@@ -41,3 +40,14 @@ Codigo  nvarchar(100) not null,
 Senha  nvarchar(100) not null,
 foreign key (IdFuncionario) references Funcionario (Id)
 ) default charset = utf8;
+
+/*---22-01-2021*/
+
+drop table if exists `Cliente`;
+
+create table if not exists Cliente(
+Id 	  int not null primary key auto_increment ,
+IdPessoa  int not null,
+foreign key (IdPessoa) references Pessoa (Id)
+) default charset = utf8;
+
